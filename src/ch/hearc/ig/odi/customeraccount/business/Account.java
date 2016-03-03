@@ -1,3 +1,6 @@
+// Auteur  : Julien Schneider
+// Version : 1.0
+
 package ch.hearc.ig.odi.customeraccount.business;
 
 public class Account {
