@@ -1,3 +1,6 @@
+// Auteur : Julien Schneider
+// Version : 1.1
+
 package ch.hearc.ig.odi.customeraccount.App;
 
 import ch.hearc.ig.odi.customeraccount.business.Account;
