@@ -4,6 +4,7 @@
 package ch.hearc.ig.odi.customeraccount.App;
 
 import ch.hearc.ig.odi.customeraccount.business.Account;
+import ch.hearc.ig.odi.customeraccount.business.Bank;
 import ch.hearc.ig.odi.customeraccount.business.Customer;
 
 /*
@@ -23,27 +24,36 @@ public class Main {
      */
     public static void main(String[] args) {
         
-        Customer c1 = new Customer(0,"Silvio","Gutierrez");
-        Customer c2 = new Customer(1,"Ajtene","Kurtaliqi");
+        Bank bank = new Bank(0,"HEG BANK");
         
-        Account a1 = new Account("0","Compte Epargne",0.21,c1);
-        Account a2 = new Account("1","Compte Courant",0.4,c1);
-        Account a3 = new Account("2","Compte Epargne",0.05,c2);
+        bank.addCustomer(0,"Silvio","Gutierrez");
+        bank.addCustomer(1,"Ajtene","Kurtaliqi");
+        
+        bank.addAccount("0","Compte Epargne",0.21,bank.getCustomerByNumber(0));
+        bank.addAccount("1","Compte Courant",0.4,bank.getCustomerByNumber(1));
+        bank.addAccount("2","Compte Epargne",0.05,bank.getCustomerByNumber(1));
+        
+        bank.getAccountByNumber("0").credit(1000);
+        bank.getAccountByNumber("1").credit(230);
+        bank.getAccountByNumber("2").credit(5000);
+        
+        System.out.println("compte 1: ");
+        System.out.println(bank.getAccountByNumber("0").getBalance());
+        System.out.println("compte 2: ");
+        System.out.println(bank.getAccountByNumber("1").getBalance());
+        System.out.println("compte 3: ");
+        System.out.println(bank.getAccountByNumber("2").getBalance());
+        
+        bank.getAccountByNumber("0").credit(500);
+        Account.transfer(230,bank.getAccountByNumber("2"),bank.getAccountByNumber("1"));
+        
+        System.out.println("compte 1: ");
+        System.out.println(bank.getAccountByNumber("0").getBalance());
+        System.out.println("compte 2: ");
+        System.out.println(bank.getAccountByNumber("1").getBalance());
+        System.out.println("compte 3: ");
+        System.out.println(bank.getAccountByNumber("2").getBalance());
 
-        a1.debit(1000);
-        System.out.println("a1 solde:"+a1.getBalance());
-        a2.debit(1495);
-        System.out.println("a2 solde:"+a2.getBalance());
-        a3.debit(3400);
-        System.out.println("a3 solde:"+a3.getBalance());
-        a3.credit(3600);
-        System.out.println("a3 solde:"+a3.getBalance());
-        
-        Account.transfer(300, a2, a1);
-        
-        System.out.println("a1 solde:"+a1.getBalance());
-        System.out.println("a2 solde:"+a2.getBalance());
-        
     }
     
 }

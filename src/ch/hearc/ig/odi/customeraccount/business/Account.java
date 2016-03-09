@@ -78,7 +78,7 @@ public class Account {
 	 * @param amount
 	 */
 	public void credit(double amount) {
-            this.balance-=amount;
+            this.balance+=amount;
 	}
 
 	/**
@@ -86,7 +86,7 @@ public class Account {
 	 * @param amount
 	 */
 	public void debit(double amount) {
-            this.balance+=amount;
+            this.balance-=amount;
 	}
 
 	/**

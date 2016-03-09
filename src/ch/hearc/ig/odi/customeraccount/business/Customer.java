@@ -76,20 +76,16 @@ public class Customer {
                     found = true;
                 }
                 i++;
-            }
-            
+            }            
             return r_account;
-            
 	}
 
 	/**
 	 * 
-	 * @param number
-	 * @param name
-	 * @param rate
+	 * @param account
 	 */
-	public void addAccount(String number, String name, double rate) {
-            accounts.add(new Account(number,name,rate,this));
+	public void addAccount(Account account) {
+            accounts.add(account);
 	}
 
 }
