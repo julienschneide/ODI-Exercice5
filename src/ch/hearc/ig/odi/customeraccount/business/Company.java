@@ -11,15 +11,16 @@ package ch.hearc.ig.odi.customeraccount.business;
  */
 public class Company extends Customer{
     
+    private String companyName;
     private String phone;
     private String fax;
 
-    public Company(int number, String firstName, String lastName) {
-        super(number, firstName, lastName);
+    public Company(int number) {
+        super(number);
     }
 
-    public Company(String phone, String fax, int number, String firstName, String lastName) {
-        super(number, firstName, lastName);
+    public Company(String phone, String fax, int number, String companyName) {
+        super(number);
         this.phone = phone;
         this.fax = fax;
     }
