@@ -6,6 +6,7 @@
 package ch.hearc.ig.odi.customeraccount.business;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -56,6 +57,10 @@ public class Bank {
     
     public void addCompany(String phone, String fax, int number, String companyName){
         customers.add(new Company(phone,fax,number,companyName));
+    }
+    
+    public void addIndividual(int number, String fn, String ln,Date birthDate, String email){
+        customers.add(new Individual(number, fn, ln, birthDate, email));
     }
     
     public void addAccount(String number, String name, double rate, Customer customer){
