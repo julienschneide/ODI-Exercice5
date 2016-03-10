@@ -23,7 +23,7 @@ public class Individual extends Customer{
         super(number);
     }
     
-    public Individual(String firstName, String lastName, Date birthDate, String email, int number) {
+    public Individual(int number, String firstName, String lastName, Date birthDate, String email) {
         super(number);
         this.firstName = firstName;
         this.lastName = lastName;
