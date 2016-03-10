@@ -6,6 +6,7 @@ package ch.hearc.ig.odi.customeraccount.App;
 import ch.hearc.ig.odi.customeraccount.business.Account;
 import ch.hearc.ig.odi.customeraccount.business.Bank;
 import ch.hearc.ig.odi.customeraccount.business.Customer;
+import java.util.Date;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -26,8 +27,8 @@ public class Main {
         
         Bank bank = new Bank(0,"HEG BANK");
         
-        bank.addCustomer(0,"Silvio","Gutierrez");
-        bank.addCustomer(1,"Ajtene","Kurtaliqi");
+        bank.addIndividual(0, "Silvio", "Gutierrez", new Date(1993, 04, 22) , "silvio.gutierrez@he-arc.ch");
+        bank.addIndividual(1, "Julien", "Schneider", new Date(1992, 04, 22) , "julien.schneider@he-arc.ch");
         
         bank.addAccount("0","Compte Epargne",0.21,bank.getCustomerByNumber(0));
         bank.addAccount("1","Compte Courant",0.4,bank.getCustomerByNumber(1));
