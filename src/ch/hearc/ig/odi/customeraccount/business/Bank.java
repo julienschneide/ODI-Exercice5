@@ -54,8 +54,8 @@ public class Bank {
         return r_customer;
     }
     
-    public void addCustomer(int number, String fn, String ln){
-        customers.add(new Customer(number,fn,ln));
+    public void addCompany(String phone, String fax, int number, String companyName){
+        customers.add(new Company(phone,fax,number,companyName));
     }
     
     public void addAccount(String number, String name, double rate, Customer customer){
